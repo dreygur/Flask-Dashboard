@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/404.css') }}">
+	    <title>Sorry!!!</title>
+	</head>
+
+  	<body>
+		<div class="error-page">
+		  <div>
+		  	{% if error == '400' %}
+			    <h1 data-h1='400'>400</h1>
+			    <p data-p='BAD REQUEST'>BAD REQUEST</p>
+			{% elif error == '401' %}
+			    <h1 data-h1='401'>401</h1>
+			    <p data-p='UNAUTHORIZED'>UNAUTHORIZED</p>
+		    {% elif error == '403' %}
+			    <h1 data-h1='403'>403</h1>
+			    <p data-p='FORBIDDEN'>FORBIDDEN</p>
+		    {% elif error == '404' %}
+			    <h1 data-h1="404">404</h1>
+			    <p data-p="NOT FOUND">NOT FOUND</p>
+		    {% elif error == '401' %}
+			    <h1 data-h1='500'>500</h1>
+			    <p data-p='SERVER ERROR'>SERVER ERROR</p>
+			{% endif %}
+		  </div>
+		</div>
+		<div id="particles-js"></div>
+
+		<script src="{{url_for('static', filename='js/404.js') }}"></script>
+  </body>
+
+</html>
